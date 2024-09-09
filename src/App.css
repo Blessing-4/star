@@ -1,38 +1,53 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Add this CSS to your App.css or a new CSS file */
+.app {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  min-height: 100vh; /* This will make sure everything is centered vertically */
+  background-color: black;
+  color: white; /* To make the text readable on a black background */
 }
 
-.App-link {
-  color: #61dafb;
+.character-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* This will allow the cards to wrap on smaller screens */
+  gap: 20px; /* Space between the cards */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.character-card {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 200px;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.character-card:hover {
+  transform: scale(1.05); /* Slightly enlarge the card when hovered */
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.character-detail {
+  margin-top: 15px;
+  background-color: #444;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h3 {
+  color: yellow;
 }
