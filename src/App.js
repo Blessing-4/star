@@ -7,94 +7,22 @@ import starwar4 from './images/starwar4.jpg';
 import starwar5 from './images/starwar5.jpg';
 import starwar6 from './images/starwar6.jpg';
 import starwar7 from './images/starwar7.jpg';
+import starwar8 from "./images/starwar12.jpg"
 import './App.css'
 
-const imagesmap = [
+const imagesmap = 
   {
-    name: 'Beru whitesun lars',
-    image: starwar1,
-    details: {
-      height: '200cm',
-      mass: '10kg',
-      hair_color: 'blue',
-      eye_color: 'black',
-      birth_year: '1989',
-      gender: 'male'
-    }
-  },
-  {
-    name: 'alker',
-    image: starwar2,
-    details: {
-      height: '200cm',
-      mass: '13kg',
-      hair_color: 'glue',
-      eye_color: 'black',
-      birth_year: '1989',
-      gender: 'male'
-    }
-  },
-  {
-    name: 'C-3po',
-    image: starwar3,
-    details: {
-      height: '200cm',
-      mass: '13kg',
-      hair_color: 'glue',
-      eye_color: 'black',
-      birth_year: '1989',
-      gender: 'male'
-    }
-  },
-  {
-    name: 'walker',
-    image: starwar4,
-    details: {
-      height: '200cm',
-      mass: '13kg',
-      hair_color: 'glue',
-      eye_color: 'black',
-      birth_year: '1989',
-      gender: 'male'
-    }
-  },
-  {
-    name: 'luke ',
-    image: starwar5,
-    details: {
-      height: '200cm',
-      mass: '13kg',
-      hair_color: 'glue',
-      eye_color: 'black',
-      birth_year: '1989',
-      gender: 'male'
-    }
-  },
-  {
-    name: 'skywalker',
-    image: starwar6,
-    details: {
-      height: '200cm',
-      mass: '13kg',
-      hair_color: 'glue',
-      eye_color: 'black',
-      birth_year: '1989',
-      gender: 'male'
-    }
-  },
-  {
-    name: 'teasler trailer',
-    image: starwar7,
-    details: {
-      height: '200cm',
-      mass: '13kg',
-      hair_color: 'glue',
-      eye_color: 'black',
-      birth_year: '1989',
-      gender: 'female'
-    }
-  }
-];
+    
+   "C-3PO": starwar1,
+    "Luke Skywalker": starwar2,
+    "R5-D4": starwar3,
+    "Darth Vader":starwar4,
+    "Beru Whitesun lars": starwar5,
+    "Leia Organa" : starwar6,
+    "Owen Lars": starwar7,
+   "R2-D2": starwar8
+
+   };
 
 function App() {
   const [characters, setCharacters] = useState([]); // Store all Star Wars people.
@@ -112,7 +40,7 @@ function App() {
       });
   }, []);
 
-  // Function to run when clicking any character
+  // na the function be this when we click any character
   const handleClick = (character) => {
     setSelectedCharacter(character === selectedCharacter ? null : character); // Toggle the clicked character details.
   };
@@ -128,35 +56,35 @@ function App() {
             onClick={() => handleClick(character)}
           >
             {/* Map the local image for each character */}
-            <img src={imagesmap[index].image} alt={character.name} />
+            <img src={imagesmap[character.name]} alt={character.name} />
             <h3>{character.name}</h3>
 
-            {/* Display details only if the character is selected */}
+            {/* Display details when i click am */}
             {selectedCharacter === character && (
               <div className='character-detail'>
                 <p>
                   <strong>Height: </strong>
-                  {imagesmap[index].details.height}
+                  {character.height} cm
                 </p>
                 <p>
                   <strong>Mass: </strong>
-                  {imagesmap[index].details.mass}
+                  {character.mass}
                 </p>
                 <p>
                   <strong>Hair Color: </strong>
-                  {imagesmap[index].details.hair_color}
+                  {character.hair_color}
                 </p>
                 <p>
                   <strong>Eye Color: </strong>
-                  {imagesmap[index].details.eye_color}
+                  {character.eye_color}
                 </p>
                 <p>
                   <strong>Birth Year: </strong>
-                  {imagesmap[index].details.birth_year}
+                  {character.birth_year}
                 </p>
                 <p>
                   <strong>Gender: </strong>
-                  {imagesmap[index].details.gender}
+                  {character.gender}
                 </p>
               </div>
             )}
